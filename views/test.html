@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testinghtml</title>
+    <script defer src="../passwordgenerator.js"></script>
+</head>
+<body>
+<div>
+    <input type="range" id="strength" name="strength" min="0" max="3" oninput="generatePassword(this.value)">
+    <output>3</output>
+    <label for="strength">strength of password</label>
+</div>
+<div id="password"></div>
+<input type="text" style="text-overflow: ellipsis;" id="myTextbox">
+<p id="result"></p>
+</body>
