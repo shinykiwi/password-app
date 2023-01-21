@@ -1,46 +1,58 @@
-const random = require('random');
-const string = require('string');
+function generatePassword(length) {
+    var lettersLower = "abcdefghijklmnopqrstuvwxyz".split("");
+    var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    var digits = "0123456789".split("");
+    var symbols = "abcdefABCDEF0123456789".split("");
 
-function generatePassword(lengthpassword) {
-  const lettersLower = list(string.asciiLowercase);
-  const lettersUpper = list(string.asciiUppercase);
-  const digits = string.digits;
-  const symbols = string.hexdigits;
-
-  let x = lengthpassword;
-  while (true) {
-    const pick = random.sample(range(2, x), 4);
-    if (sum(pick) === x) {
-      break;
+    var x = length;
+    while (true) {
+        var pick = Array.from({length: 4}, () => Math.floor(Math.random() * (x - 2) + 2));
+        if (pick.reduce((a, b) => a + b) === x) break;
     }
-  }
-  result = pick;
+    var result = pick;
 
-  const numOfLetterLower = pick[0];
-  const numOfLetterUpper = pick[1];
-  const numOfSymbols = pick[2];
-  const numOfDigits = pick[3];
+    var numofletterlower = result[0];
+    var numofletterupper = result[1];
+    var numofsymbols = result[2];
+    var numofdigits = result[3];
 
-  const passwordList = [];
-  for (let i = 0; i < numOfLetterLower; i++) {
-    passwordList.push(random.choice(lettersLower));
-  }
-  for (let i = 0; i < numOfLetterUpper; i++) {
-    passwordList.push(random.choice(lettersUpper));
-  }
-  for (let i = 0; i < numOfSymbols; i++) {
-    passwordList.push(random.choice(symbols));
-  }
-  for (let i = 0; i < numOfDigits; i++) {
-    passwordList.push(random.choice(digits));
-  }
+    var password = "";
+    for (var i = 0; i < numofletterlower; i++) {
+        password += lettersLower[Math.floor(Math.random() * lettersLower.length)];
+    }
+    for (var i = 0; i < numofletterupper; i++) {
+        password += lettersUpper[Math.floor(Math.random() * lettersUpper.length)];
+    }
+    for (var i = 0; i < numofsymbols; i++) {
+        password += symbols[Math.floor(Math.random() * symbols.length)];
+    }
+    for (var i = 0; i < numofdigits; i++) {
+        password += digits[Math.floor(Math.random() * digits.length)];
+    }
 
-  random.shuffle(passwordList);
-  let password = "";
-  for (let i = 0; i < passwordList.length; i++) {
-    password += passwordList[i];
-  }
-  console.log(`Your password is: ${password}`);
+    var password_list = password.split("");
+    password_list = shuffle(password_list);
+    password = password_list.join("");
+    console.log("Your password is: " + password);
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }
 
 generatePassword(14);
