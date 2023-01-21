@@ -2,25 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-            http-equiv="Content-Security-Policy"
-            content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-            http-equiv="X-Content-Security-Policy"
-            content="default-src 'self'; script-src 'self'"
-    />
-<<<<<<< Updated upstream
-    <link href="/dist/output.css" rel="stylesheet">
-=======
-    <link href="dist/output.css" rel="stylesheet">
-    <script src="passwordgenerator.js"></script>
->>>>>>> Stashed changes
+    <link href="../dist/output.css" rel="stylesheet">
+    <script defer src="../renderer.js"></script>
+    <script defer src="../passwordgenerator.js"></script>
     <title>Password App</title>
 </head>
 <body>
 <div class="">
+    <button id="testButton" onclick="myClickFunction()">Test Button</button>
     <div class="w-full">
         <h1 class="text-3xl font-bold">Password App</h1>
     </div>

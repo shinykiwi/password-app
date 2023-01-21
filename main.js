@@ -5,10 +5,13 @@ const createWindow = () => {
         width: 800,
         height: 600,
         autoHideMenuBar: true, // hide menu bar at top of window
+        webPreferences: {
+            nodeIntegration: true,
+        }
     })
 
     win.loadFile('views/index.html')
-    win.openDevTools();
+    win.openDevTools()
 }
 
 app.whenReady().then(() => {
