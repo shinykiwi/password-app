@@ -2,7 +2,7 @@ function generatePassword(length) {
     var lettersLower = "abcdefghijklmnopqrstuvwxyz".split("");
     var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     var digits = "0123456789".split("");
-    var symbols = "abcdefABCDEF0123456789".split("");
+    var symbols = "!@#$%&*?()[]{}".split("");
 
     var x = length;
     while (true) {
