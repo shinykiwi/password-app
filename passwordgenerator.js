@@ -1,3 +1,12 @@
+
+var textbox = document.getElementById("myTextbox");
+var inputValue = textbox.value;
+
+
+generatePassword(int(inputValue));
+
+
+
 function generatePassword(length) {
     var lettersLower = "abcdefghijklmnopqrstuvwxyz".split("");
     var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -34,6 +43,7 @@ function generatePassword(length) {
     password_list = shuffle(password_list);
     password = password_list.join("");
     console.log("Your password is: " + password);
+    document.getElementById("result").innerHTML = password;
 }
 
 function shuffle(array) {
@@ -55,4 +65,4 @@ function shuffle(array) {
     return array;
 }
 
-generatePassword(14);
+
