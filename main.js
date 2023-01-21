@@ -4,6 +4,7 @@ const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
+        autoHideMenuBar: true, // hide menu bar at top of window
     })
 
     win.loadFile('views/index.html')
@@ -14,5 +15,5 @@ app.whenReady().then(() => {
 })
 
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') app.quit()
+    if (process.platform !== 'darwin') app.quit()  // run app.quit() if the user is not on macOS
 })
