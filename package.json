@@ -1,5 +1,19 @@
 {
-  "dependencies": {
-    "electron": "^22.0.3"
-  }
+  "name": "password-app",
+  "version": "1.0.0",
+  "description": "an app to store and create passwords",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "password-app"
+  },
+  "keywords": [
+    "password",
+    "security"
+  ],
+  "author": "Kira, Zack, Lucas, Chris",
+  "license": "ISC"
 }
