@@ -1,10 +1,10 @@
-
-var textbox = document.getElementById("myTextbox");
-var inputValue = textbox.value;
-
-
-generatePassword(int(inputValue));
-
+function updateContent() {
+    var inputValue = document.getElementById("myTextbox").value;
+    console.log(inputValue);
+    returnpassword = generatePassword(Number(inputValue));
+    console.log(returnpassword);
+    document.getElementById("result").innerHTML = returnpassword;
+}
 
 
 function generatePassword(length) {
@@ -43,8 +43,8 @@ function generatePassword(length) {
     password_list = shuffle(password_list);
     password = password_list.join("");
     console.log("Your password is: " + password);
-    document.getElementById("result").innerHTML = password;
-}
+    return password;
+    }
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;

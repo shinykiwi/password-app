@@ -8,6 +8,7 @@ const createWindow = () => {
     })
 
     win.loadFile('views/index.html')
+    win.openDevTools();
 }
 
 app.whenReady().then(() => {
