@@ -15,5 +15,8 @@
     "security"
   ],
   "author": "Kira, Zack, Lucas, Chris",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^19.0.0"
+  }
 }
