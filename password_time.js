@@ -1,6 +1,6 @@
 function calculateTimeToCrack(password) {
     // Get the number of possible characters for the password
-    let  characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?()[]{}";
+    let  characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";
     const characterCount = characters.length;
 
     // Get the number of possible combinations for the password

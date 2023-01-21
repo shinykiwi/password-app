@@ -7,13 +7,18 @@ function updateContent() {
 }
 
 
-function generatePassword(length) {
-    var lettersLower = "abcdefghijklmnopqrstuvwxyz".split("");
-    var lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    var digits = "0123456789".split("");
-    var symbols = "!@#$%&*?()[]{}".split("");
 
-    var x = length;
+function generatePassword(slider_value) {
+    const lettersLower = "abcdefghijklmnopqrstuvwxyz".split("");
+    const lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    const digits = "0123456789".split("");
+    const symbols = "!@#$%&*?".split("");
+
+    slider_value = parseInt(slider_value)
+    var x = Math.pow(2, slider_value+3);
+    console.log('slider_value: ' + '2^' + (slider_value+3) + ' = ' + slider_value)
+    console.log('password length: ' + x)
+
     while (true) {
         var pick = Array.from({length: 4}, () => Math.floor(Math.random() * (x - 2) + 2));
         if (pick.reduce((a, b) => a + b) === x) break;
@@ -43,8 +48,8 @@ function generatePassword(length) {
     password_list = shuffle(password_list);
     password = password_list.join("");
     console.log("Your password is: " + password);
-    return password;
-    }
+    document.getElementById("myTextbox").value = password;
+}
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
