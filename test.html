@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>testinghtml</title>
     <script src="/passwordgenerator.js"></script>
+    
+    <div>
+        <input type="range" id="strength" name="strength"
+               min="0" max="4" oninput="this.nextElementSibling.value = this.value">
+        <output>3</output>
+        <label for="strength">strength of password</label>
+    </div>
+
 </head>
 <body>
 <input type="text" id="myTextbox">
