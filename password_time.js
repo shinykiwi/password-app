@@ -5,18 +5,29 @@ function calculateTimeToCrack(password) {
 
     // Get the number of possible combinations for the password
     let combinationCount = Math.pow(characterCount, password.length);
-
+    console.log(combinationCount)
     // Calculate the time to crack the password in seconds
-    let timeToCrack = combinationCount / 100000000;
+    let timeTC = (combinationCount / 1000000000);
 
-    // Convert time to crack to minutes
-    let timeToCrackInMinutes = timeToCrack / 60;
+    let timeTCSec = (timeTC%60);
+    timeTC = (timeTC - timeTCSec)/60;
+
+    let timeTCMin = (timeTC%60);
+    timeTC = (timeTC - timeTCMin)/60;
+
+    let timeTCHour = (timeTC%24);
+    timeTC = (timeTC - timeTCHour)/60;
+
+    let timeTCDay = (timeTC / 24);
+
+    console.log("Day: " + timeTCDay + " Hour: " + timeTCHour + " Minute: " + timeTCMin + " Second: " + timeTCSec);
 
     // Return the time to crack in minutes
-    return timeToCrackInMinutes;
+    let toString = ("Day: " + timeTCDay + " Hour: " + timeTCHour + " Minute: " + timeTCMin + " Second: " + timeTCSec);
+
+    return toString;
 }
 
 // Example usage:
-let password = "11111111";
-let timeToCrack = calculateTimeToCrack(password, guessesPerSecond);
-console.log("Time to crack password: " + timeToCrack + " minutes");
+let password = "ckel7@P#1h32y";
+let timeToCrack = calculateTimeToCrack(password);
