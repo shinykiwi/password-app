@@ -9,7 +9,23 @@ function updateContent() {
 
 
 function generatePassword(slider_value) {
-    document.getElementById("strengthLabel").textContent = slider_value + ' strength of password'
+    strengthLabel = document.getElementById("strengthLabel")
+    switch (slider_value) {
+        case '0':
+            text = 'Medium'
+            break;
+        case '1':
+            text = 'Strong'
+            break;
+        case '2':
+            text = 'Really strong'
+            break;
+        case '3':
+            text = 'Really really strong'
+            break;
+    }
+    document.getElementById("strengthLabel").textContent = text
+
     const lettersLower = "abcdefghijklmnopqrstuvwxyz".split("");
     const lettersUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     const digits = "0123456789".split("");
