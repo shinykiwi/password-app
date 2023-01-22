@@ -310,4 +310,11 @@ function updateContent1() {
     document.getElementById("result").innerHTML = pwstrength;
     }
 
-
+const form = document.getElementById("login-form");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+    // Send login request to server
+    // ...
+});
