@@ -11,3 +11,9 @@ return strength;
 }
 
 passwordstrength("hello")
+
+ var inputValue = document.getElementById("myTextbox").value;
+    console.log(inputValue);
+    pwstrength = generatePassword(userinput);
+    console.log(pwstrength);
+    document.getElementById("result").innerHTML = pwstrength;
