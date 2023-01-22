@@ -14,28 +14,55 @@
         <h1 class="text-3xl font-bold">Password App</h1>
     </div>
     <div class="flex mt-2">
-        <div class="w-full bg-slate-200 rounded-md p-2 mr-2 align-middle text-center">
+        <div class="w-full bg-slate-200 rounded-md p-2 mr-2 align-middle text-center p-4">
             <p class="text-2xl align-middle">New password</p>
-        </div>
-        <div class="">
-            <div class="w-full bg-green-200 text-green-600 rounded-md p-2 m-2">
-                <div class="flex">
-                    <div class="flex align-middle h-full m-4 bg-green-400 rounded-full text-green-400">
-                        <img src="../img/check.svg" alt="check" width="45" height="45">
-                    </div>
-                    <div>
-                        <p class="text-2xl">All passwords secure</p>
-                        <p>Last breach <strong>38</strong> days ago.</p>
-                    </div>
+            <div>
+                <div id="password"></div>
+                <input type="text" class="rounded-md mt-2" id="myTextbox">
+                <p id="result"></p>
+            </div>
+            <div class="grid text-left mt-2">
+                <label class="">Special Characters
+                    <input type="checkbox" checked="checked">
+                    <span class="bg-red-400"></span>
+                </label>
+                <label class="">Numbers
+                    <input type="checkbox">
+                    <span class=""></span>
+                </label>
+            </div>
+            <div>
+                <div class="grid text-left mt-2">
+                    <p>Length</p>
+                    <input class="mt-2" type="range" id="strength" name="strength" min="0" max="3" oninput="generatePassword(this.value)">
                 </div>
+            </div>
+
+
+
+        </div>
+        <div class="" >
+            <div class="w-full bg-green-200 text-green-600 rounded-md p-2 m-2 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-green-400 duration-300
+">              <a href="https://www.w3schools.com/tags/tag_a.asp">
+                    <div class="flex justify-center">
+                        <div class="flex items-center m-4">
+                            <img src="../img/check.svg" alt="check" width="35" height="35">
+                        </div>
+                        <div>
+                            <p class="text-2xl flex items-center">All passwords secure</p>
+                            <p class="flex items-center">Last breach&nbsp;<strong>38</strong>&nbsp;days ago.</p>
+                        </div>
+                    </div>
+                </a>
+
             </div>
             <div class="w-full bg-slate-200 flex rounded-md p-2 m-2">
                 <div class="">
                     <h1 class="text-blue-600 underline text-2xl">235 million Twitter accounts were leaked in</h1>
                     <p>The email addresses tied to 235 million Twitter accounts have been shared in an online hacking forum, per the Washington Post. While it doesn't look like...</p>
                 </div>
-                <div>
-                    <img src="../img/twitter.png" alt="twitter" width="100" height="100">
+                <div class="w-full rounded-full flex items-center m-2">
+                    <img src="../img/twitter.png" alt="twitter" width="300" height="300">
                 </div>
             </div>
             <div class="flex m-2">
@@ -56,13 +83,6 @@
     </div>
 
 </div>
-<div>
-    <input type="range" id="strength" name="strength" min="0" max="3" oninput="generatePassword(this.value)">
-    <label id="strengthLabel">strength of password</label>
-</div>
-<div id="password"></div>
-<input type="text" style="text-overflow: ellipsis;" id="myTextbox">
-<p id="result"></p>
 
 </body>
 </html>
