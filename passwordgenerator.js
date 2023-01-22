@@ -88,7 +88,7 @@ function shuffle(array) {
 
 
 //pass word strength
-Function passwordstrength(userinput){
+function passwordstrength(userinput){
 const zxcvbn = require('zxcvbn');
 
 let password = userinput;
