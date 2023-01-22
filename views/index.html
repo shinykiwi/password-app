@@ -55,10 +55,14 @@
     </div>
 
 </div>
+<div>
+    <input type="range" id="strength" name="strength" min="0" max="3" oninput="generatePassword(this.value)">
+    <label id="strengthLabel">strength of password</label>
+</div>
+<div id="password"></div>
+<input type="text" style="text-overflow: ellipsis;" id="myTextbox">
+<p id="result"></p>
 
-<input type="text" id="myTextbox">
-<button onclick="updateContent()">Update</button>
-<div id="result"></div>
 </body>
 </html>
 
