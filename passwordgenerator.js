@@ -1,3 +1,4 @@
+//password generator
 function updateContent() {
     var inputValue = document.getElementById("myTextbox").value;
     console.log(inputValue);
@@ -5,8 +6,6 @@ function updateContent() {
     console.log(returnpassword);
     document.getElementById("result").innerHTML = returnpassword;
 }
-
-
 
 function generatePassword(slider_value) {
     strengthLabel = document.getElementById("strengthLabel")
@@ -88,3 +87,62 @@ function shuffle(array) {
 }
 
 
+//pass word strength
+Function passwordstrength(userinput){
+const zxcvbn = require('zxcvbn');
+
+let password = userinput;
+
+let strength = zxcvbn(password).score;
+
+console.log(strength);
+
+return strength;
+}
+
+
+function updateContent1() {
+    var inputValue = document.getElementById("myTextbox").value;
+    console.log(inputValue);
+    pwstrength = passwordstrength(userinput);
+    console.log(pwstrength);
+    document.getElementById("result").innerHTML = pwstrength;
+    }
+
+
+
+
+//time to crack password
+function calculateTimeToCrack(password) {
+    // Get the number of possible characters for the password
+    let  characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*?";
+    const characterCount = characters.length;
+
+    // Get the number of possible combinations for the password
+    let combinationCount = Math.pow(characterCount, password.length);
+    console.log(combinationCount)
+    // Calculate the time to crack the password in seconds
+    let timeTC = (combinationCount / 1000000000);
+
+    let timeTCSec = (timeTC%60);
+    timeTC = (timeTC - timeTCSec)/60;
+
+    let timeTCMin = (timeTC%60);
+    timeTC = (timeTC - timeTCMin)/60;
+
+    let timeTCHour = (timeTC%24);
+    timeTC = (timeTC - timeTCHour)/60;
+
+    let timeTCDay = (timeTC / 24);
+
+    console.log("Day: " + timeTCDay + " Hour: " + timeTCHour + " Minute: " + timeTCMin + " Second: " + timeTCSec);
+
+    // Return the time to crack in minutes
+    let toString = ("Day: " + timeTCDay + " Hour: " + timeTCHour + " Minute: " + timeTCMin + " Second: " + timeTCSec);
+
+    return toString;
+}
+
+// Example usage:
+let password = "ckel7@P#1h32y";
+let timeToCrack = calculateTimeToCrack(password);
