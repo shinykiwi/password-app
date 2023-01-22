@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>testinghtml</title>
-    <script defer src="passwordstrength.js"></script>
+    <script defer src="../database.js"></script>
 </head>
 <body>
+<<<<<<< Updated upstream
 <form id="login-form">
     <div class="flex flex-col">
         <label class="text-lg font-medium mb-2" for="email">Email</label>
@@ -21,4 +22,14 @@
         </button>
     </div>
 </form>
+=======
+<div>
+    <input type="range" id="strength" name="strength" min="0" max="3" oninput="generatePassword(this.value)">
+    <output>3</output>
+    <label for="strength">strength of password</label>
+</div>
+<input type="text" id="myTextbox">
+<button onclick="updateContent()">Update</button>
+<div id="result"></div>
+>>>>>>> Stashed changes
 </body>
